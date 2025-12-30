@@ -72,12 +72,10 @@ const hasPapers = papers && papers.length > 0;
                                             <div class="w-full h-[15vh] md:h-[25vh] overflow-auto">
                                                 <iframe
                                                         src={pdfUrl}
-                                                        class="w-full h-full rounded border border-gray-200 shadow-sm"
+                                                        class="w-full h-full rounded border border-gray-200 shadow-sm transform origin-top-left scale-[0.7] md:scale-100"
                                                         style="min-height: 600px;"
                                                 />
                                             </div>
-
-
                                     ) : (
                                             <div class="text-sm text-gray-500 italic text-center">PDF not available</div>
                                     )}
@@ -136,17 +134,19 @@ const hasPapers = papers && papers.length > 0;
                                                     Copy
                                                 </button>
 
-                                                <pre class="px-4 py-3 overflow-x-auto text-xs sm:text-sm text-gray-800 font-mono m-0 text-left whitespace-pre">
-                                                    <code>
-                                                        {paper.bibtex.replace(/^\s+|\s+$/g, "").split("\n").map((line) => {
-                                                            const trimmed = line.trim();
-                                                            if (trimmed.includes("=")) {
-                                                                return "  " + trimmed;
-                                                            }
-                                                            return trimmed;
-                                                        }).join("\n")}
-                                                    </code>
-                                                </pre>
+                                                <pre
+                                                        class="px-4 py-3 overflow-x-auto text-xs sm:text-sm text-gray-800 font-mono m-0 text-left whitespace-pre"
+                                                ><code>{paper.bibtex
+                                                    .replace(/^\s+|\s+$/g, "")
+                                                    .split("\n")
+                                                    .map((line) => {
+                                                        const trimmed = line.trim();
+                                                        if (trimmed.includes("=")) {
+                                                            return "  " + trimmed;   // indent only lines with '='
+    }
+                                                        return trimmed;            // @article{ and }
+  })
+                                                    .join("\n")}</code></pre>
                                             </div>
                                         </details>
                                     )}
