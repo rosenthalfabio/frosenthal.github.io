@@ -1,0 +1,49 @@
+---
+import { siteConfig } from "../config";
+---
+
+<html lang="de">
+<head>
+    <title>Impressum</title>
+    <meta charset="utf-8" />
+</head>
+
+<body class="bg-white text-gray-800">
+<main class="max-w-3xl mx-auto p-8 sm:p-12">
+    <h1 class="text-2xl sm:text-3xl font-bold mb-6">Impressum</h1>
+
+    <p class="mb-4">
+        <strong>Name:</strong><br />
+        Fabio Rosenthal
+    </p>
+
+    <p class="mb-4">
+        <strong>Affiliation:</strong><br />
+        Data Analytics and Machine Learning<br />
+        Technical University of Munich
+    </p>
+
+    <p class="mb-4">
+        <strong>Address:</strong><br />
+        Boltzmannstr. 3<br />
+        85748 Garching<br />
+        Germany
+    </p>
+
+    <p class="mb-4">
+        <strong>Contact:</strong><br />
+        <a
+                href="mailto:f.rosenthal@tum.de"
+                class="underline"
+                style={`color: ${siteConfig.accentColor}`}
+        >
+            f.rosenthal@tum.de
+        </a>
+    </p>
+
+    <p class="text-sm text-gray-600 mt-8">
+        Responsible for content according to § 18 Abs. 2 MStV.
+    </p>
+</main>
+</body>
+</html>

@@ -1,7 +1,7 @@
 ---
 import { siteConfig } from "../config";
 
-const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
+const hasPapers = siteConfig.papers && siteConfig.papers.length > 0;
 const hasExperience = siteConfig.experience && siteConfig.experience.length > 0;
 const hasEducation = siteConfig.education && siteConfig.education.length > 0;
 ---
@@ -19,7 +19,36 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
           {siteConfig.title}
         </p>
         <div class="flex gap-x-6">
-          <a
+            <a
+                href={siteConfig.social.scholar}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Google Scholar"
+                class="text-gray-600 transition-colors duration-300 hover:text-[var(--accent-color)]"
+                style={`--accent-color: ${siteConfig.accentColor}`}
+            >
+              <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="h-6 w-6"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <!-- Scholar icon: stylized graduation cap -->
+                <path d="M12 3l9 4-9 4-9-4 9-4z" />
+                <path d="M3 7v6l9 5 9-5V7" />
+                <path d="M12 21v-8" />
+                <path d="M12 13l-7-4" />
+                <path d="M12 13l7-4" />
+              </svg>
+            </a>
+        <a
             href={`mailto:${siteConfig.social.email}`}
             aria-label="Email"
             class="text-gray-600 transition-colors duration-300 hover:text-[var(--accent-color)]"
@@ -71,30 +100,6 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
             >
           </a>
           <a
-            href={siteConfig.social.twitter}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Twitter"
-            class="text-gray-600 transition-colors duration-300 hover:text-[var(--accent-color)]"
-            style={`--accent-color: ${siteConfig.accentColor}`}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="h-6 w-6"
-              ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
-                d="M4 4l11.733 16h4.267l-11.733 -16z"></path><path
-                d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path></svg
-            >
-          </a>
-          <a
             href={siteConfig.social.github}
             target="_blank"
             rel="noopener noreferrer"
@@ -129,14 +134,24 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
             >About</a
           >
           {
-            hasProjects && (
+              hasPapers && (
               <a
-                href="#projects"
+                href="#papers"
                 class="text-sm text-gray-600 hover:text-gray-800 transition-colors"
               >
-                Projects
+                Papers
               </a>
             )
+          }
+          {
+              hasEducation && (
+                  <a
+                      href="#education"
+                      class="text-sm text-gray-600 hover:text-gray-800 transition-colors"
+                  >
+                    Education
+                  </a>
+              )
           }
           {
             hasExperience && (
@@ -148,16 +163,14 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
               </a>
             )
           }
-          {
-            hasEducation && (
-              <a
-                href="#education"
-                class="text-sm text-gray-600 hover:text-gray-800 transition-colors"
-              >
-                Education
-              </a>
-            )
-          }
+        </nav>
+        <nav class="flex gap-x-8 mb-13">
+          <a href="/impressum" class="text-sm text-gray-600 hover:text-gray-800 transition-colors">
+            Impressum
+          </a>
+          <a href="/datenschutz" class="text-sm text-gray-600 hover:text-gray-800 transition-colors">
+            Datenschutzerklärung
+          </a>
         </nav>
         <p class="text-sm text-gray-500">
           © {new Date().getFullYear()}
