@@ -34,9 +34,20 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
                         {edu.school}
                       </p>
                     </div>
-                    <span class="text-xs sm:text-sm text-gray-500 mt-2 sm:mt-0">
-                      {edu.dateRange}
-                    </span>
+                    <div class="flex flex-col items-end mt-2 sm:mt-0 space-y-2">
+                      <span class="text-xs sm:text-sm text-gray-500">
+                        {edu.dateRange}
+                      </span>
+
+                      {edu.gpa && (
+                        <span
+                            class="px-3 py-1 text-xs sm:text-sm font-semibold rounded-md text-white"
+                            style={`background-color: ${siteConfig.accentColor}`}
+                        >
+                          GPA: {Number(edu.gpa).toFixed(1)}
+                        </span>
+                      )}
+                    </div>
                   </div>
 
                   <ul class="space-y-2">

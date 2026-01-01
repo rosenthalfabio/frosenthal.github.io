@@ -1,91 +1,87 @@
 export const siteConfig = {
-  name: "Ryan Fitzgerald",
-  title: "Senior Software Engineer",
-  description: "Portfolio website of Ryan Fitzgerald",
+  name: "Fabio Rosenthal",
+  title: "AI Researcher",
+  description: "Portfolio website of Fabio Rosenthal",
   accentColor: "#1d4ed8",
   social: {
-    email: "your-email@example.com",
-    linkedin: "https://linkedin.com/in/yourprofile",
-    twitter: "https://x.com/rfitzio",
-    github: "https://github.com/RyanFitzgerald",
+    linkedin: "https://www.linkedin.com/in/fabio-rosenthal-677869153",
+    scholar: "https://scholar.google.com/citations?user=jPYk7D8AAAAJ&hl=en",
+    github: "https://github.com/rosenthalf"
   },
   aboutMe:
-    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem quos asperiores nihil consequatur tempore cupiditate architecto natus commodi corrupti quas quasi facere est, dignissimos odit nam veniam sapiente ut, vitae eligendi ipsum dolor, nostrum ullam impedit! Corrupti ratione mollitia temporibus necessitatibus, consectetur reiciendis recusandae id, dolorum quaerat, vero pariatur. Ratione!",
-  skills: ["Javascript", "React", "Node.js", "Python", "AWS", "Docker"],
+    "I am a PhD student supervised by Prof. Stephan Günnemann in the Data Analytics and Machine Learning Group at the Technical University of Munich, in collaboration with Volkswagen AG. My research focuses on efficiency, explainability, and robustness in computer vision, large language models (LLMs), and multimodal large language models (MLLMs).",
+  skills: {
+    "Technical Stack": ["Python", "PyTorch", "NumPy", "Ray", "TensorBoard", "scikit-learn"],
+    "Deep Learning & Research": ["Vision Transformers", "Efficiency", "Multimodal Models", "Model Robustness", "NLP", "Explainability"],
+    "Scientific Foundations": ["Linear Algebra", "Probability & Statistics", "Optimization"],
+    "Research Practice & Tooling": ["Experimental Design", "Reproducible Research", "Git", "Docker", "Linux", "HPC", "LaTeX", "Azure"]
+  },
   projects: [
-    {
-      name: "AI Dev Roundup Newsletter",
-      description:
-        "One concise email. Five minutes. Every Tuesday. Essential AI news & trends, production-ready libraries, powerful AI tools, and real-world code examples",
-      link: "https://aidevroundup.com/?ref=devportfolio",
-      skills: ["React", "Node.js", "AWS"],
-    },
-    {
-      name: "Chrome Extension Mastery: Build Full-Stack Extensions with React & Node.js",
-      description:
-        "Master the art of building production-ready, full-stack Chrome Extensions using modern web technologies and best practices",
-      link: "https://fullstackextensions.com/?ref=devportfolio",
-      skills: ["React", "Node.js", "AWS"],
-    },
-    {
-      name: "ExtensionKit",
-      description:
-        "Kit to jump-start your Chrome extension projects with a variety of battle-tested starter templates & examples",
-      link: "https://extensionkit.io/?ref=devportfolio",
-      skills: ["React", "Node.js", "AWS"],
-    },
   ],
   experience: [
     {
       company: "Volkswagen AG",
       title: "Research Scientist",
       dateRange: "Oct 2023 - Present",
+      workType: "Full Time",
       bullets: [
-        "Led development of microservices architecture serving 1M+ users",
-        "Reduced API response times by 40% through optimization",
-        "Mentored team of 5 junior developers",
       ],
     },
     {
-      company: "Startup Inc",
-      title: "Full Stack Developer",
-      dateRange: "Jun 2020 - Dec 2021",
+      company: "GfK SE",
+      title: "AI Engineer",
+      dateRange: "Jun 2022 - Mar 2023",
+      workType: "Working Student",
       bullets: [
-        "Built and launched MVP product from scratch using React and Node.js",
-        "Implemented CI/CD pipeline reducing deployment time by 60%",
-        "Collaborated with product team to define technical requirements",
       ],
     },
     {
-      company: "Digital Agency",
-      title: "Frontend Developer",
-      dateRange: "Aug 2018 - May 2020",
+      company: "Siemens AG",
+      title: "Research Scientist",
+      dateRange: "Jul 2020 - Sep 2020",
+      workType: "Internship",
       bullets: [
-        "Developed responsive web applications for 20+ clients",
-        "Improved site performance scores by 35% on average",
-        "Introduced modern JavaScript frameworks to legacy codebases",
       ],
     },
   ],
   education: [
     {
-      school: "University Name",
-      degree: "Bachelor of Science in Computer Science",
-      dateRange: "2014 - 2018",
+      school: "Technical University of Munich",
+      degree: "PhD Candidate (Dr. rer. nat)",
+      dateRange: "Oct 2023 - Present",
       achievements: [
-        "Graduated Magna Cum Laude with 3.8 GPA",
-        "Dean's List all semesters",
-        "President of Computer Science Club",
+        "PhD candidate at the Data Analytics and Machine Learning (DAML) Group",
+        "Under supervision of Prof. Stephan Günnemann"
       ],
     },
     {
-      school: "Online Platform",
-      degree: "Full Stack Development Certificate",
-      dateRange: "2019",
+      school: "Friedrich-Alexander University Erlangen",
+      degree: "M.Sc. Artificial Intelligence",
+      dateRange: "Oct 2021 - Sep 2023",
+      gpa: 3.9,
       achievements: [
-        "Completed 500+ hours of coursework",
-        "Built 10+ portfolio projects",
-        "Specialized in React and Node.js",
+        "Second master's program with a strong focus on artificial intelligence, combining in-depth theoretical foundations with hands-on coursework",
+        "Coursework spanning computer vision, explainability, and efficient machine learning methods",
+      ],
+    },
+    {
+      school: "Friedrich-Alexander University Erlangen",
+      degree: "M.Sc. Mechatronics",
+      dateRange: "Oct 2020 - Sep 2023",
+      gpa: 3.7,
+      achievements: [
+        "Interdisciplinary master's program at the intersection of electrical engineering, control systems, and computer science",
+        "Specialization in robotics, control theory, and AI-driven methods for autonomous systems",
+      ],
+    },
+    {
+      school: "Technical University of Brunswick",
+      degree: "B.Sc. Mechanical Engineering",
+      dateRange: "Oct 2016 - Sep 2020",
+      gpa: 3.0,
+      achievements: [
+        "Solid engineering foundation in mechanics, mathematics, and systems thinking, with a strong focus on analytical problem-solving",
+        "Early exposure to modeling, simulation, and control concepts that sparked a growing interest in data-driven and AI-based methods",
       ],
     },
   ],
