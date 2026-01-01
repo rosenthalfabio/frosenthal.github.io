@@ -1,47 +1,106 @@
 ---
 import { siteConfig } from "../config";
+import "../styles/global.css";
 ---
 
 <html lang="de">
 <head>
     <title>Impressum</title>
     <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={siteConfig.description} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+            href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700&display=swap"
+            rel="stylesheet"
+    />
 </head>
 
-<body class="bg-white text-gray-800">
-<main class="max-w-3xl mx-auto p-8 sm:p-12">
-    <h1 class="text-2xl sm:text-3xl font-bold mb-6">Impressum</h1>
+<body
+        class="relative isolate overflow-hidden bg-white text-gray-800"
+        style={`--accent-color: ${siteConfig.accentColor}`}
+>
+<!-- Gradient background -->
+<div
+        class="absolute inset-0 -z-10"
+        style={`background: radial-gradient(
+        ellipse 800px 1200px at 0% 0%,
+        ${siteConfig.accentColor}40 0%,
+        ${siteConfig.accentColor}25 20%,
+        ${siteConfig.accentColor}10 40%,
+        rgba(255, 255, 255, 0.3) 70%,
+        rgba(255, 255, 255, 0.8) 90%,
+        white 100%
+      )`}
+></div>
 
-    <p class="mb-4">
-        <strong>Name:</strong><br />
-        Fabio Rosenthal
-    </p>
-
-    <p class="mb-4">
-        <strong>Affiliation:</strong><br />
-        Data Analytics and Machine Learning<br />
-        Technical University of Munich
-    </p>
-
-    <p class="mb-4">
-        <strong>Address:</strong><br />
-        Boltzmannstr. 3<br />
-        85748 Garching<br />
-        Germany
-    </p>
-
-    <p class="mb-4">
-        <strong>Contact:</strong><br />
-        <a
-                href="mailto:f.rosenthal@tum.de"
-                class="underline"
-                style={`color: ${siteConfig.accentColor}`}
+<!-- Subtle pattern overlay -->
+<svg
+        aria-hidden="true"
+        class="absolute inset-0 -z-10 size-full stroke-gray-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
+>
+    <defs>
+        <pattern
+                id="impressum-grid"
+                x="50%"
+                y={-1}
+                width={200}
+                height={200}
+                patternUnits="userSpaceOnUse"
         >
-            f.rosenthal@tum.de
-        </a>
-    </p>
+            <path d="M.5 200V.5H200" fill="none" />
+        </pattern>
+    </defs>
+    <rect
+            fill="url(#impressum-grid)"
+            width="100%"
+            height="100%"
+            stroke-width={0}
+    />
+</svg>
 
-    <p class="text-sm text-gray-600 mt-8">
+<!-- Content -->
+<main class="max-w-3xl mx-auto p-8 sm:p-12 md:p-16">
+    <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-8">
+        Impressum
+    </h1>
+
+    <section class="space-y-6 text-base sm:text-lg text-gray-700">
+        <p>
+            <span class="font-semibold">Name</span><br />
+            Fabio Rosenthal
+        </p>
+
+        <p>
+            <span class="font-semibold">Affiliation</span><br />
+            Data Analytics and Machine Learning<br />
+            Technical University of Munich
+        </p>
+
+        <p>
+            <span class="font-semibold">Address</span><br />
+            Boltzmannstr. 3<br />
+            85748 Garching<br />
+            Germany
+        </p>
+
+        <p>
+            <span class="font-semibold">Contact</span><br />
+            <a
+                    href="mailto:f.rosenthal@tum.de"
+                    class="font-medium underline underline-offset-4 transition-colors"
+                    style={`color: ${siteConfig.accentColor}`}
+            >
+                f.rosenthal@tum.de
+            </a>
+        </p>
+    </section>
+
+    <p class="mt-12 text-sm text-gray-600">
         Responsible for content according to § 18 Abs. 2 MStV.
     </p>
 </main>
