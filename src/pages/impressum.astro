@@ -20,10 +20,13 @@ import "../styles/global.css";
     />
 </head>
 
-<body class="bg-white text-gray-800">
+<body
+        class="relative isolate bg-white text-gray-800 text-left min-h-screen"
+        style={`--accent-color: ${siteConfig.accentColor}`}
+>
 <!-- Gradient background -->
 <div
-        class="absolute inset-0 -z-10"
+        class="absolute inset-0 -z-10 pointer-events-none"
         style={`background: radial-gradient(
       ellipse 800px 1200px at 0% 0%,
       ${siteConfig.accentColor}40 0%,
@@ -35,10 +38,10 @@ import "../styles/global.css";
     )`}
 ></div>
 
-<!-- Subtle pattern overlay -->
+<!-- Subtle grid pattern -->
 <svg
         aria-hidden="true"
-        class="absolute inset-0 -z-10 w-full h-full stroke-gray-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
+        class="absolute inset-0 -z-10 w-full h-full stroke-gray-200 pointer-events-none [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
 >
     <defs>
         <pattern
@@ -56,45 +59,47 @@ import "../styles/global.css";
 </svg>
 
 <!-- Content -->
-<main class="relative max-w-3xl mx-auto p-8 sm:p-12">
+<main class="relative z-10 max-w-3xl mx-auto p-8 sm:p-12 min-h-screen">
     <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-8">
         Impressum
     </h1>
 
     <section class="space-y-6 text-base sm:text-lg text-gray-700">
         <p>
-            <span class="font-semibold" style={`color: ${siteConfig.accentColor}`}>Name</span><br />
+            <span class="font-semibold" style={`color: ${siteConfig.accentColor}`}>Name:</span><br />
             Fabio Rosenthal
         </p>
 
         <p>
-            <span class="font-semibold" style={`color: ${siteConfig.accentColor}`}>Affiliation</span><br />
+            <span class="font-semibold" style={`color: ${siteConfig.accentColor}`}>Academic context:</span><br />
             Data Analytics and Machine Learning<br />
             Technical University of Munich
         </p>
 
         <p>
-            <span class="font-semibold" style={`color: ${siteConfig.accentColor}`}>Address</span><br />
+            <span class="font-semibold" style={`color: ${siteConfig.accentColor}`}>Address:</span><br />
             Boltzmannstr. 3<br />
             85748 Garching<br />
             Germany
         </p>
 
         <p>
-            <span class="font-semibold" style={`color: ${siteConfig.accentColor}`}>Contact</span><br />
+            <span class="font-semibold" style={`color: ${siteConfig.accentColor}`}>Contact:</span><br />
             <a
                     href="mailto:f.rosenthal@tum.de"
-                    class="font-medium underline underline-offset-4 transition-colors"
-                    style={`color: ${siteConfig.accentColor}`}
+                    class="transition-colors"
             >
                 f.rosenthal@tum.de
             </a>
         </p>
+
+        <p>
+            <span class="font-semibold" style={`color: ${siteConfig.accentColor}`}>Responsible for content according to § 18 Abs. 2 MStV:</span><br />
+            Fabio Rosenthal
+        </p>
     </section>
 
-    <p class="mt-12 text-sm text-gray-600">
-        Responsible for content according to § 18 Abs. 2 MStV.
-    </p>
+
 </main>
 </body>
 </html>

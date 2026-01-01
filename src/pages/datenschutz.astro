@@ -3,61 +3,122 @@ import { siteConfig } from "../config";
 import "../styles/global.css";
 ---
 
-<html lang="de" class="scroll-smooth">
+<html lang="de">
 <head>
     <title>Datenschutzerklärung</title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={siteConfig.description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+            href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700&display=swap"
+            rel="stylesheet"
+    />
 </head>
 
-<body class="bg-white text-gray-800">
-<main class="max-w-3xl mx-auto p-8 sm:p-12">
-    <h1 class="text-2xl sm:text-3xl font-bold mb-6">Datenschutzerklärung</h1>
+<body
+        class="relative isolate bg-white text-gray-800 text-left min-h-screen"
+        style={`--accent-color: ${siteConfig.accentColor}`}
+>
+<!-- Gradient background -->
+<div
+        class="absolute inset-0 -z-10 pointer-events-none"
+        style={`background: radial-gradient(
+      ellipse 800px 1200px at 0% 0%,
+      ${siteConfig.accentColor}40 0%,
+      ${siteConfig.accentColor}25 20%,
+      ${siteConfig.accentColor}10 40%,
+      rgba(255, 255, 255, 0.3) 70%,
+      rgba(255, 255, 255, 0.8) 90%,
+      white 100%
+    )`}
+></div>
 
-    <h2 class="text-lg font-semibold mt-6 mb-2">Hosting</h2>
-    <p class="mb-4">
-        This website is hosted on <strong>GitHub Pages</strong>, a service
-        provided by GitHub, Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107,
-        USA.
-    </p>
-
-    <p class="mb-4">
-        When visiting this website, GitHub may process technical information such
-        as IP address, date and time of access, browser type, and operating
-        system. This data is required for the secure and reliable delivery of the
-        website.
-    </p>
-
-    <h2 class="text-lg font-semibold mt-6 mb-2">Cookies & Tracking</h2>
-    <p class="mb-4">
-        This website does <strong>not</strong> use cookies or tracking tools.
-    </p>
-
-    <h2 class="text-lg font-semibold mt-6 mb-2">External Links</h2>
-    <p class="mb-4">
-        This website may contain links to external websites (e.g., GitHub,
-        arXiv). I have no control over the content or data processing practices of
-        these websites.
-    </p>
-
-    <h2 class="text-lg font-semibold mt-6 mb-2">Your Rights</h2>
-    <p class="mb-4">
-        You have the right to request information about the personal data stored
-        about you and to request its correction or deletion in accordance with
-        applicable data protection laws.
-    </p>
-
-    <h2 class="text-lg font-semibold mt-6 mb-2">Contact</h2>
-    <p>
-        For privacy-related inquiries, please contact:<br />
-        <a
-                href="mailto:f.rosenthal@tum.de"
-                class="underline"
-                style={`color: ${siteConfig.accentColor}`}
+<!-- Subtle grid pattern -->
+<svg
+        aria-hidden="true"
+        class="absolute inset-0 -z-10 w-full h-full stroke-gray-200 pointer-events-none [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
+>
+    <defs>
+        <pattern
+                id="datenschutz-grid"
+                x="50%"
+                y={-1}
+                width={200}
+                height={200}
+                patternUnits="userSpaceOnUse"
         >
-            f.rosenthal@tum.de
-        </a>
-    </p>
+            <path d="M.5 200V.5H200" fill="none" />
+        </pattern>
+    </defs>
+    <rect fill="url(#datenschutz-grid)" width="100%" height="100%" stroke-width={0} />
+</svg>
+
+<!-- Content -->
+<main class="max-w-3xl mx-auto p-8 sm:p-12 min-h-screen relative z-10">
+    <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-8">
+        Datenschutzerklärung
+    </h1>
+
+    <section class="space-y-6 text-base sm:text-lg text-gray-700">
+        <div>
+            <h2 class="font-semibold text-gray-800 mb-1">Hosting</h2>
+            <p>
+                This website is hosted on <strong>GitHub Pages</strong>, a service
+                provided by GitHub, Inc., 88 Colin P Kelly Jr St, San Francisco, CA
+                94107, USA.
+            </p>
+            <p class="mt-2">
+                When visiting this website, GitHub may process technical information
+                such as IP address, date and time of access, browser type, and
+                operating system. This data is required for the secure and reliable
+                delivery of the website.
+            </p>
+        </div>
+
+        <div>
+            <h2 class="font-semibold text-gray-800 mb-1">Cookies & Tracking</h2>
+            <p>
+                This website does <strong>not</strong> use cookies or tracking tools.
+            </p>
+        </div>
+
+        <div>
+            <h2 class="font-semibold text-gray-800 mb-1">External Links</h2>
+            <p>
+                This website may contain links to external websites (e.g., GitHub,
+                arXiv). I have no control over the content or data processing practices
+                of these websites.
+            </p>
+        </div>
+
+        <div>
+            <h2 class="font-semibold text-gray-800 mb-1">Your Rights</h2>
+            <p>
+                You have the right to request information about the personal data
+                stored about you and to request its correction or deletion in
+                accordance with applicable data protection laws.
+            </p>
+        </div>
+
+        <div>
+            <h2 class="font-semibold text-gray-800 mb-1">Contact</h2>
+            <p>
+                For privacy-related inquiries, please contact:<br />
+                <a
+                        href="mailto:f.rosenthal@tum.de"
+                        class="font-medium underline underline-offset-4 transition-colors"
+                        style={`color: ${siteConfig.accentColor}`}
+                >
+                    f.rosenthal@tum.de
+                </a>
+            </p>
+        </div>
+    </section>
 </main>
 </body>
 </html>
